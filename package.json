@@ -1,0 +1,27 @@
+{
+  "name": "browserstack-examples-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "playwright": "^1.17.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.17.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "endToEnd": "npx playwright test e2e.spec.js --headed --config=resources/conf/playwright.config.js",
+    "allTests": "npx playwright test e2e.spec.js --headed --config=resources/conf/playwright.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/princebaretto99/browserstack-examples-playwright.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/princebaretto99/browserstack-examples-playwright/issues"
+  },
+  "homepage": "https://github.com/princebaretto99/browserstack-examples-playwright#readme"
+}
