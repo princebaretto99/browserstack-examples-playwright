@@ -1,5 +1,3 @@
-// const { chromium , firefox, webkit } = require('playwright')
-
 const { test, expect } = require('@playwright/test');
 
 test.describe("End to End Tests", ()=>{

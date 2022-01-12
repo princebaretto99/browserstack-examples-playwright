@@ -1,30 +1,36 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('Login feature', () => {
+test.describe('User feature', () => {
 
-    test('Simple Login test', async ({ page }) => {
+    test('Login as User with no image loaded', async ({ page }) => {
         await page.goto("https://bstackdemo.com/");
         await page.click("#signin", { delay: 100 });
-        await page.fill("#react-select-2-input", "fav_user");
+        await page.fill("#react-select-2-input", "image_not_loading_user");
         await page.press("#react-select-2-input", "Enter");
         await page.fill("#react-select-3-input", "testingisfun99");
         await page.press("#react-select-3-input", "Enter");
         await page.click("#login-btn");
 
-        const username = await page.textContent('.username');
-        expect(username).toBe('fav_user')
+        const loc = page.locator("img[alt='iPhone 12']")
+        await expect(loc).toHaveAttribute('src','')
+
     });
 
-    test('LockedLogin test', async ({ page }) => {
+    test('Login as User with existing Orders', async ({ page }) => {
         await page.goto("https://bstackdemo.com/");
         await page.click("#signin", { delay: 100 });
-        await page.fill("#react-select-2-input", "locked_user");
+        await page.fill("#react-select-2-input", "existing_orders_user");
         await page.press("#react-select-2-input", "Enter");
         await page.fill("#react-select-3-input", "testingisfun99");
         await page.press("#react-select-3-input", "Enter");
         await page.click("#login-btn");
+        await page.waitForNavigation();
 
-        const text = await page.textContent('.api-error');
-        expect(text).toBe('Your account has been locked.')
+        await page.click('text=Orders')
+
+        const loc = page.locator('.a-box-inner')
+        await expect(loc).toHaveCount(10)
+
     });
+
 })
