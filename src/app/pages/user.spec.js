@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+const { expect } = require('@playwright/test');
+const { test } = require('../../../fixtures');
 
 test.describe('User feature', () => {
 
@@ -30,7 +31,6 @@ test.describe('User feature', () => {
 
         const loc = page.locator('.a-box-inner')
         await expect(loc).toHaveCount(10)
-
     });
 
 })

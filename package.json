@@ -12,7 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "endToEnd": "npx playwright test e2e.spec.js --headed --config=resources/conf/playwright.config.js",
-    "allTests": "npx playwright test --headed --config=resources/conf/playwright.config.js"
+    "allTests": "npx playwright test --headed --config=resources/conf/playwright.config.js",
+    "bStack" : "npx playwright test --config=resources/conf/playwright-bs.config.js"
   },
   "repository": {
     "type": "git",

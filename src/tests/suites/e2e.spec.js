@@ -1,7 +1,8 @@
-const { test, expect } = require('@playwright/test');
+const { expect } = require('@playwright/test');
+const { test } = require('../../../fixtures');
 
 test.describe("End to End Tests", ()=>{
-  test('basic test', async ({ page }) => {
+  test('End to End test', async ({ page }) => {
     await page.goto("https://bstackdemo.com/");
     await page.click("#signin", { delay: 100 });
     await page.fill("#react-select-2-input", "fav_user");
