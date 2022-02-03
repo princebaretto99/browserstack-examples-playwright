@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const { test } = require('../../../fixtures');
+const { test } = require('../../fixtures');
 
 test.describe("End to End Tests", ()=>{
   test('End to End test', async ({ page }) => {

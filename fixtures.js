@@ -5,7 +5,7 @@ const clientPlaywrightVersion = cp
     .toString()
     .trim()
     .split(' ')[1];
-// const BrowserStackLocal = require('browserstack-local');
+const BrowserStackLocal = require('browserstack-local');
 
 // BrowserStack Specific Capabilities.
 const caps = {
@@ -17,16 +17,16 @@ const caps = {
     'browserstack.username': process.env.BROWSERSTACK_USERNAME || 'YOUR_USERNAME',
     'browserstack.accessKey':
         process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY',
-    //   'browserstack.local': process.env.BROWSERSTACK_LOCAL || false,
+      'browserstack.local': process.env.BROWSERSTACK_LOCAL || false,
     'client.playwrightVersion': clientPlaywrightVersion,
 };
 
-// exports.bsLocal = new BrowserStackLocal.Local();
+exports.bsLocal = new BrowserStackLocal.Local();
 
 // replace YOUR_ACCESS_KEY with your key. You can also set an environment variable - "BROWSERSTACK_ACCESS_KEY".
-// exports.BS_LOCAL_ARGS = {
-//   key: process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY',
-// };
+exports.BS_LOCAL_ARGS = {
+  key: process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY',
+};
 
 // Patching the capabilities dynamically according to the project name.
 const patchCaps = (name, title) => {
@@ -49,7 +49,7 @@ const isHash = (entity) => Boolean(entity && typeof (entity) === "object" && !Ar
 const nestedKeyValue = (hash, keys) => keys.reduce((hash, key) => (isHash(hash) ? hash[key] : undefined), hash);
 
 exports.test = base.test.extend({
-    page: async ({ page, browser, playwright }, use, testInfo) => {
+    page: async ({ page, playwright }, use, testInfo) => {
         // Use BrowserStack Launched Browser according to capabilities for cross-browser testing.
         if (testInfo.project.name.match(/browserstack/)) {
             page.close()

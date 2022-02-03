@@ -2,7 +2,9 @@ const { devices } = require('@playwright/test');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
-  testDir: '../../src',
+  testDir: '../../src/localTests',
+  globalSetup : require.resolve('./global-setup'),
+  globalTeardown : require.resolve('./global-teardown'),
   workers : 10,
   timeout: 60000,
   use:{
@@ -19,7 +21,7 @@ const config = {
       },
     },
     {
-      name: 'chrome@latest-beta:OSX Big Sur@browserstack',
+      name: 'chrome@latest-beta:Windows 10@browserstack',
       use: {
         browserName: 'chromium',
         channel: 'chrome',
@@ -32,18 +34,17 @@ const config = {
       },
     },
     {
-      name: 'playwright-firefox@latest:OSX Catalina@browserstack',
+      name: 'playwright-firefox@latest:Windows 11@browserstack',
       use: {
         browserName: 'firefox',
         ignoreHTTPSErrors: true
       },
     },
     {
-      name: 'playwright-webkit@latest:OSX Big Sur@browserstack',
+      name: 'edge@latest-1:Windows 11@browserstack',
       use: {
-        browserName: 'webkit',
-        // Config to use playwright emulated devices.
-        // ...devices['iPhone 12 Pro Max'],
+        browserName: 'chromium',
+       
       },
     },
   ],
