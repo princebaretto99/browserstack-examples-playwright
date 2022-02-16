@@ -14,7 +14,7 @@ module.exports = async () => {
         localResponseReceived = true;
     })
     while (!localResponseReceived) {
-        // await sleep(1000);
+        await sleep(1000);
         console.log("Waiting..");
       }
   };

@@ -3,8 +3,8 @@ const { devices } = require('@playwright/test');
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
   testDir: '../../src/localTests',
-  // globalSetup : require.resolve('./global-setup'),
-  // globalTeardown : require.resolve('./global-teardown'),
+  globalSetup : require.resolve('./global-setup'),
+  globalTeardown : require.resolve('./global-teardown'),
   workers : 5,
   timeout: 60000,
   use:{
