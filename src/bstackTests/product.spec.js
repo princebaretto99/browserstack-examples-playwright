@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const { test } = require('../../../fixtures');
+const { test } = require('../../fixtures');
 
 test.describe('Product feature', () => {
 
@@ -10,7 +10,7 @@ test.describe('Product feature', () => {
 
 
         const loc =  page.locator('.shelf-item__title')
-        await expect(loc).toHaveCount(6)
+        await expect(loc).toHaveCount(9)
 
     });
 

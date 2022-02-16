@@ -2,7 +2,7 @@ const { devices } = require('@playwright/test');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
-  testDir: '../../src/tests',
+  testDir: '../../src/bStackTests',
   workers : 10,
   timeout: 60000,
   use:{

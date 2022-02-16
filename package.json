@@ -16,7 +16,8 @@
     "onPrem-endToEnd": "npx playwright test e2e.spec.js --headed --config=resources/conf/playwright.config.js --project webkit",
     "onPrem-parallel": "npx playwright test --headed --config=resources/conf/playwright.config.js --workers 2",
     "bstack-single": "npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --project 'chrome@latest:Windows 10@browserstack'",
-    "bstack-parallel": "npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2",
+    "bstack-parallel-tests": "npx playwright test --config=resources/conf/playwright-bstack.config.js --project 'chrome@latest:Windows 10@browserstack'",
+    "bstack-parallel-browsers": "npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2",
     "bstack-local": "BROWSERSTACK_LOCAL=true npx playwright test login.spec.js --config=resources/conf/playwright-bstack-local.config.js --project 'chrome@latest:Windows 10@browserstack'",
     "bstack-local-parallel": "BROWSERSTACK_LOCAL=true npx playwright test login.spec.js --config=resources/conf/playwright-bstack-local.config.js --workers 2"
   },
