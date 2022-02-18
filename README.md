@@ -53,11 +53,6 @@ The Playwright tests are run on different platforms like on-prem and BrowserStac
 
 This infrastructure points to running the tests on your own machine using a browser (e.g. Chrome) using the browser's driver executables (e.g. ChromeDriver for Chrome). #{ Selenium enables this functionality using WebDriver for many popular browsers.}
 
-## Prerequisites
-
-- For this infrastructure configuration (i.e on-premise), ensure that the ChromeDriver executable is placed in the `/src/test/resources/drivers` folder.
-
-Note: The ChromeDriver version must match the Chrome browser version on your machine.
 
 ## Running Your Tests
 
@@ -68,30 +63,32 @@ Note: The ChromeDriver version must match the Chrome browser version on your mac
   To run a specific test scenario, use the following command with the additional 'test-name' argument:
   
   ```sh
-  robot --variable testType:on-prem --test "<Test scenario name>" . 
+  npx playwright test <spec-file> --headed --config=resources/conf/playwright.config.js --project <project-name>
   ```
 
-  where,  the argument 'test-name' can be any RobotFramework scenario name configured in this repository.
+  where,  the argument '<spec-file>' can be any spec files from the repository.
   
-  E.g. "Check Login with locked_user", "E2E Test", "Apply 'Lowest to Highest' Order By Filter" or any of the other test scenario names, as outlined in [About the tests in this repository](#About-the-tests-in-this-repository) section.
+  E.g. "e2e.spec.js", "login.spec.js", "product.spec.js" or any of the other tests, as outlined in [About the tests in this repository](#About-the-tests-in-this-repository) section.
+
+  Also, the argument '<project-name>' can be any of the project names from the `playwright.conf.js` file.
 
 - Output
 
   This run profile executes a specific test scenario on a single browser instance on your own machine.
 
 
-### Run the entire test suite on your own machine
+### Run the entire test suite in parallel on your own machine
 
   To run the entire test suite on your own machine, use the following command:
   
   ```sh
-  robot --variable testType:on-prem --suite <Suite-name> .
+  npx playwright test --headed --config=resources/conf/playwright.config.js --workers 2
   ```
 
 
 - Output
 
-  This run profile executes the entire test suite sequentially on a single browser, on your own machine.
+  This run profile executes the entire test collection in parallel on single/multiple browsers based on the configuration file, on your own machine.
 
   
 ---
