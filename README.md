@@ -66,11 +66,11 @@ This infrastructure points to running the tests on your own machine using a brow
   npx playwright test <spec-file> --headed --config=resources/conf/playwright.config.js --project <project-name>
   ```
 
-  where,  the argument '<spec-file>' can be any spec files from the repository.
+  where,  the argument `<spec-file>` can be any spec files from the repository.
   
   E.g. "e2e.spec.js", "login.spec.js", "product.spec.js" or any of the other tests, as outlined in [About the tests in this repository](#About-the-tests-in-this-repository) section.
 
-  Also, the argument '<project-name>' can be any of the project names from the `playwright.conf.js` file.
+  Also, the argument `<project-name>` can be any of the project names from the `playwright.conf.js` file.
 
 - Output
 
@@ -141,11 +141,11 @@ In this section, we will run a single test on Chrome browser on Browserstack. To
 
   ```
 
-  where,  the argument '<spec-file>' can be any spec files from the repository.
+  where,  the argument `<spec-file>` can be any spec files from the repository.
   
   E.g. "e2e.spec.js", "login.spec.js", "product.spec.js" or any of the other tests, as outlined in [About the tests in this repository](#About-the-tests-in-this-repository) section.
 
-  Also, the argument '<project-name>' can be any of the project names from the `playwright-bstack.conf.js` file.
+  Also, the argument `<project-name>` can be any of the project names from the `playwright-bstack.conf.js` file.
 
 
 - Output
@@ -201,11 +201,11 @@ In this section, we will run a single test on Chrome browser on Browserstack. To
   npx playwright test <spec-file> --config=resources/conf/playwright-bstack-local.config.js --project 'chrome@latest:Windows 10@browserstack'"
   ```
 
-  where,  the argument '<spec-file>' can be any spec files from the repository.
+  where,  the argument `<spec-file>` can be any spec files from the repository.
   
   E.g. "e2e.spec.js", "login.spec.js", "product.spec.js" or any of the other tests, as outlined in [About the tests in this repository](#About-the-tests-in-this-repository) section.
 
-  Also, the argument '<project-name>' can be any of the project names from the `playwright-bstack.conf.js` file.
+  Also, the argument `<project-name>` can be any of the project names from the `playwright-bstack.conf.js` file.
 
 
 - Output
