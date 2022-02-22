@@ -4,7 +4,12 @@ const { test } = require('../../fixtures');
 test.describe('User feature', () => {
 
     test('Login as User with no image loaded', async ({ page }) => {
-        await page.goto("https://bstackdemo.com/");
+        if(process.env.BROWSERSTACK_LOCAL == true){
+            await page.goto("http://localhost:3000/");
+        }
+        else{
+            await page.goto("https://bstackdemo.com/");
+        }
         await page.click("#signin", { delay: 100 });
         await page.fill("#react-select-2-input", "image_not_loading_user");
         await page.press("#react-select-2-input", "Enter");
@@ -18,7 +23,12 @@ test.describe('User feature', () => {
     });
 
     test('Login as User with existing Orders', async ({ page }) => {
-        await page.goto("https://bstackdemo.com/");
+        if(process.env.BROWSERSTACK_LOCAL == true){
+            await page.goto("http://localhost:3000/");
+        }
+        else{
+            await page.goto("https://bstackdemo.com/");
+        }
         await page.click("#signin", { delay: 100 });
         await page.fill("#react-select-2-input", "existing_orders_user");
         await page.press("#react-select-2-input", "Enter");

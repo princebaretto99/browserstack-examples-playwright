@@ -2,7 +2,7 @@ const { devices } = require('@playwright/test');
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
-  testDir: '../../src/localTests',
+  testDir: '../../src/bstackTests',
   globalSetup : require.resolve('./global-setup'),
   globalTeardown : require.resolve('./global-teardown'),
   workers : 5,

@@ -3,7 +3,12 @@ const { test } = require('../../fixtures');
 
 test.describe("End to End Tests", ()=>{
   test('End to End test', async ({ page }) => {
-    await page.goto("https://bstackdemo.com/");
+    if(process.env.BROWSERSTACK_LOCAL == true){
+      await page.goto("http://localhost:3000/");
+  }
+  else{
+      await page.goto("https://bstackdemo.com/");
+  }
     await page.click("#signin", { delay: 100 });
     await page.fill("#react-select-2-input", "fav_user");
     await page.press("#react-select-2-input", "Enter");

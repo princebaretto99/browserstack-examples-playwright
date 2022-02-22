@@ -4,7 +4,12 @@ const { test } = require('../../fixtures');
 test.describe('Product feature', () => {
 
     test('Apply Apple Vendor Filter', async ({ page }) => {
-        await page.goto("https://bstackdemo.com/");
+        if(process.env.BROWSERSTACK_LOCAL == true){
+            await page.goto("http://localhost:3000/");
+        }
+        else{
+            await page.goto("https://bstackdemo.com/");
+        }
 
         await page.click('.filters-available-size:nth-child(2) .checkmark')
 
@@ -15,7 +20,12 @@ test.describe('Product feature', () => {
     });
 
     test('Apply Lowest to Highest Order By', async ({ page }) => {
-        await page.goto("https://bstackdemo.com/");
+        if(process.env.BROWSERSTACK_LOCAL == true){
+            await page.goto("http://localhost:3000/");
+        }
+        else{
+            await page.goto("https://bstackdemo.com/");
+        }
         
         await page.selectOption('select', 'lowestprice');
 
