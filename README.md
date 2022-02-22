@@ -72,6 +72,11 @@ This infrastructure points to running the tests on your own machine using a brow
 
   Also, the argument `<project-name>` can be any of the project names from the `playwright.conf.js` file.
 
+  Or, you can directly run the pre-confifured setup by running the below command:
+  ```sh
+  npm run onPrem-endToEnd
+  ```
+
 - Output
 
   This run profile executes a specific test scenario on a single browser instance on your own machine.
@@ -83,6 +88,12 @@ This infrastructure points to running the tests on your own machine using a brow
   
   ```sh
   npx playwright test --headed --config=resources/conf/playwright.config.js --workers 2
+  ```
+
+  Or, you can directly run the pre-confifured setup by running the below command:
+
+  ```sh
+  npm run onPrem-parallel
   ```
 
 
@@ -147,6 +158,11 @@ In this section, we will run a single test on Chrome browser on Browserstack. To
 
   Also, the argument `<project-name>` can be any of the project names from the `playwright-bstack.conf.js` file.
 
+  Or, you can directly run the pre-confifured setup by running the below command:
+
+  ```sh
+  npm run bstack-single
+  ```
 
 - Output
 
@@ -170,6 +186,21 @@ In this section, we will run the tests in parallel on a single browser on Browse
 - Output
 
   This run profile executes the entire test suite in parallel on a single BrowserStack browser. Please refer to your [BrowserStack dashboard](https://automate.browserstack.com/) for test results.
+
+  Or, you can directly run the pre-confifured setup by running the below command:
+
+  ```sh
+  npm run bstack-parallel-tests
+  ```
+
+  <b>Note:</b> If you want to run tests on multiple browsers, you just need to remove the `project` argument from the command.
+
+  You can directly run the above scenario using the following command:
+
+  ```sh
+  npm run bstack-parallel-browsers
+  ```
+
 
 
 
@@ -207,6 +238,11 @@ In this section, we will run a single test on Chrome browser on Browserstack. To
 
   Also, the argument `<project-name>` can be any of the project names from the `playwright-bstack.conf.js` file.
 
+Or, you can directly run the pre-confifured setup by running the below command:
+
+  ```sh
+  npm run bstack-local
+  ```
 
 - Output
 
@@ -228,6 +264,13 @@ Refer the below snippet, here we will run the tests in parallel on a multiple br
   ```
 
  Note: The `workers` argument mentions the number of tests you want to run in parallel at a time.
+
+
+Or, you can directly run the pre-confifured setup by running the below command:
+
+  ```sh
+  npm run bstack-local-parallel
+  ```
 
 - Output
 
