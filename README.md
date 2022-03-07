@@ -51,9 +51,6 @@ The Playwright tests are run on different platforms like on-prem and BrowserStac
 
 # On Premise / Self Hosted
 
-This infrastructure points to running the tests on your own machine using a browser (e.g. Chrome) using the browser's driver executables (e.g. ChromeDriver for Chrome). #{ Selenium enables this functionality using WebDriver for many popular browsers.}
-
-
 ## Running Your Tests
 
 ### Run a specific test on your own machine
